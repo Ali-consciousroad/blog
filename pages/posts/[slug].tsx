@@ -20,26 +20,26 @@ export default function PostPage({
   return (
     <Container>
       <Head>
-        <title>{post.title} | My awesome blog</title>
+        <title>{post.title} | Iran Blog</title>
       </Head>
 
       {router.isFallback ? (
-        <div>Loading…</div>
+        <div className="text-center py-10 text-gray-600">Loading...</div>
       ) : (
         <div>
           <article>
-            <header>
-              <h1 className="text-4xl font-bold">{post.title}</h1>
+            <header className="mb-10">
+              <h1 className="text-3xl font-medium text-iran-green mb-4">{post.title}</h1>
               {post.excerpt ? (
-                <p className="mt-2 text-xl">{post.excerpt}</p>
+                <p className="text-xl text-gray-600 leading-relaxed">{post.excerpt}</p>
               ) : null}
-              <time className="flex mt-2 text-gray-400">
+              <time className="flex mt-4 text-gray-400">
                 {distanceToNow(new Date(post.date))}
               </time>
             </header>
 
             <div
-              className="prose mt-10"
+              className="prose prose-lg max-w-none prose-headings:text-iran-green prose-a:text-iran-green hover:prose-a:text-iran-red"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
           </article>
