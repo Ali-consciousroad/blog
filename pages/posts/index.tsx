@@ -14,20 +14,20 @@ export default function NotePage({
         <div className="space-y-12">
           {allPosts.map((post) => (
             <article key={post.slug} className="group">
-              <Link
-                as={`/posts/${post.slug}`}
-                href="/posts/[slug]"
+            <Link
+              as={`/posts/${post.slug}`}
+              href="/posts/[slug]"
                 className="block"
-              >
+            >
                 <h2 className="text-xl font-medium text-iran-green group-hover:text-iran-red transition-colors">
-                  {post.title}
+              {post.title}
                 </h2>
                 <p className="mt-2 text-gray-600 leading-relaxed">{post.excerpt}</p>
                 <div className="mt-2 text-gray-400">
-                  <time>{distanceToNow(new Date(post.date))}</time>
-                </div>
+              <time>{distanceToNow(new Date(post.date))}</time>
+            </div>
               </Link>
-            </article>
+          </article>
           ))}
         </div>
       ) : (

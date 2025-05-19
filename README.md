@@ -1,65 +1,67 @@
 # Blog with Comment
 
-This project adds commenting functionality to [Next.js blog application](https://github.com/vercel/next.js/tree/canary/examples/blog) using Upstash and Auth0.
-
-The comment box requires Auth0 authentication for users to add new comments. A user can delete their own comment. Also admin user can delete any comment.
-
-Comments are stored in Serverless Redis ([Upstash](http://upstash.com/)).
+A Next.js blog application with commenting functionality using Upstash (Redis) and Auth0 authentication.
 
 ### Demo
 
 [https://blog-with-comment.vercel.app/](https://blog-with-comment.vercel.app/)
 
-## `1` Project set up
+## Quick Start
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
-with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the
-example:
-
+1. Clone the repository:
 ```bash
-npx create-next-app --example blog-with-comment blog-with-comment-app
+git clone <your-repo-url>
+cd blog-with-comment-app
 ```
 
-## `2` Set up environment variables
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+```
 
-Copy the `.env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
-
+3. Set up environment variables:
 ```bash
 cp .env.local.example .env.local
 ```
 
-## `3` Configuring Upstash
+4. Start the development server:
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-Go to the [Upstash Console](https://console.upstash.com/) and create a new database
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-#### Upstash environment
+> **Note:** Use `npm run dev` to start the project.
 
-- `REDIS_URL`: Find the URL in the database details page in Upstash Console clicking on **Redis Connect** button.
+## Environment Setup
 
-## `4` Configuring Auth0
+### Upstash (Redis)
+1. Create a new database in [Upstash Console](https://console.upstash.com/)
+2. Add `REDIS_URL` to your `.env.local` file (found in database details under **Redis Connect**)
 
-1. Go to the [Auth0 dashboard](https://manage.auth0.com/) and create a new application of type **Single Page Web
-   Applications**.
-2. Go to the settings page of the application
-3. Configure the following settings:
-   - **Allowed Callback URLs**: Should be set to `http://localhost:3000/` when testing locally or typically
-     to `https://myapp.com/` when deploying your application.
-   - **Allowed Logout URLs**: Should be set to `http://localhost:3000/` when testing locally or typically
-     to `https://myapp.com/` when deploying your application.
-   - **Allowed Web Origins**: Should be set to `http://localhost:3000` when testing locally or typically
-     to `https://myapp.com/` when deploying your application.
-4. Save the settings.
+### Auth0
+1. Create a new **Single Page Web Application** in [Auth0 dashboard](https://manage.auth0.com/)
+2. Configure these settings in Auth0:
+   - **Allowed Callback URLs**: `http://localhost:3000/`
+   - **Allowed Logout URLs**: `http://localhost:3000/`
+   - **Allowed Web Origins**: `http://localhost:3000`
+3. Add these to your `.env.local`:
+   - `NEXT_PUBLIC_AUTH0_DOMAIN`
+   - `NEXT_PUBLIC_AUTH0_CLIENT_ID`
+   - `NEXT_PUBLIC_AUTH0_ADMIN_EMAIL` (for admin comment deletion privileges)
 
-#### Auth0 environment
+## Features
+- Blog posts with Markdown support
+- Comment system with Auth0 authentication
+- Users can delete their own comments
+- Admin can delete any comment
+- Comments stored in Serverless Redis (Upstash)
 
-- `NEXT_PUBLIC_AUTH0_DOMAIN`: Can be found in the Auth0 dashboard under `settings`.
-- `NEXT_PUBLIC_AUTH0_CLIENT_ID`: Can be found in the Auth0 dashboard under `settings`.
-- `NEXT_PUBLIC_AUTH0_ADMIN_EMAIL`: This is the email of the admin user which you use while signing in Auth0. Admin is able to delete any comment.
+## Deployment
+Deploy to Vercel by pushing to GitHub/GitLab/Bitbucket and [importing to Vercel](https://vercel.com/new).
 
-## Deploy Your Local Project
-
-To deploy your local project to Vercel, push it to GitHub/GitLab/Bitbucket
-and [import to Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=upstash-roadmap).
-
-**Important**: When you import your project on Vercel, make sure to click on **Environment Variables** and set them to
-match your `.env.local` file.
+**Note**: Set environment variables in Vercel to match your `.env.local` file.
