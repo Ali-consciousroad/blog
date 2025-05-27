@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Container from "../components/container";
 
 export default function Header() {
@@ -6,8 +7,15 @@ export default function Header() {
     <header className="py-6 border-b border-gray-100">
       <Container>
         <nav className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-medium text-iran-green hover:text-iran-red transition-colors">
-            Iran Blog
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/iran-logo-transparent.png"
+              alt="Iran Blog Logo"
+              width={75}
+              height={75}
+              className="rounded-full"
+              priority
+            />
           </Link>
           <div className="flex items-center space-x-12 ml-auto">
             <Link href="/" className="text-gray-600 hover:text-iran-red transition-colors">
