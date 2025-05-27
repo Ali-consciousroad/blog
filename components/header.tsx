@@ -4,15 +4,15 @@ import Container from "../components/container";
 
 export default function Header() {
   return (
-    <header className="py-6 border-b border-gray-100">
+    <header className="p-0 border-b border-gray-100">
       <Container>
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
               src="/images/iran-logo-transparent.png"
               alt="Iran Blog Logo"
-              width={75}
-              height={75}
+              width={64}
+              height={64}
               className="rounded-full"
               priority
             />

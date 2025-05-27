@@ -5,7 +5,7 @@ function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative h-[80vh] w-full overflow-hidden">
+      <div className="relative h-screen w-full overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
@@ -111,62 +111,48 @@ function HomePage() {
           </div>
 
           {/* Partners Section */}
-          <div className="pt-12">
-            <h2 className="text-3xl font-medium text-iran-green mb-8">Our Partners</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {/* Partner 1 */}
-              <div className="p-6 border border-iran-green/20 rounded-lg hover:border-iran-red/40 transition-colors bg-white/50 backdrop-blur-sm">
-                <div className="aspect-square relative mb-4">
-                  <Image
-                    src="/images/partner1.jpg"
-                    alt="Partner 1"
-                    fill
-                    className="object-contain p-4"
-                  />
+          <section className="py-20 bg-gray-50">
+            <Container>
+              <h2 className="text-3xl font-bold text-center mb-12">Our Partners</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Ali Dindar */}
+                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <div className="w-24 h-24 bg-iran-green rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">AD</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-center mb-2">Ali Dindar</h3>
+                  <p className="text-gray-600 text-center">Founder</p>
                 </div>
-                <h3 className="text-lg font-medium text-iran-green text-center">Persian Heritage Tours</h3>
-              </div>
 
-              {/* Partner 2 */}
-              <div className="p-6 border border-iran-green/20 rounded-lg hover:border-iran-red/40 transition-colors bg-white/50 backdrop-blur-sm">
-                <div className="aspect-square relative mb-4">
-                  <Image
-                    src="/images/partner2.jpg"
-                    alt="Partner 2"
-                    fill
-                    className="object-contain p-4"
-                  />
+                {/* Reza Tabesh */}
+                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <div className="w-24 h-24 bg-iran-red rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">RT</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-center mb-2">Reza Tabesh</h3>
+                  <p className="text-gray-600 text-center">Content Creator</p>
                 </div>
-                <h3 className="text-lg font-medium text-iran-green text-center">Iranian Art Gallery</h3>
-              </div>
 
-              {/* Partner 3 */}
-              <div className="p-6 border border-iran-green/20 rounded-lg hover:border-iran-red/40 transition-colors bg-white/50 backdrop-blur-sm">
-                <div className="aspect-square relative mb-4">
-                  <Image
-                    src="/images/partner3.jpg"
-                    alt="Partner 3"
-                    fill
-                    className="object-contain p-4"
-                  />
+                {/* Asma */}
+                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <div className="w-24 h-24 bg-iran-green rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">A</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-center mb-2">Asma</h3>
+                  <p className="text-gray-600 text-center">English Teacher & Writer</p>
                 </div>
-                <h3 className="text-lg font-medium text-iran-green text-center">Persian Cuisine</h3>
-              </div>
 
-              {/* Partner 4 */}
-              <div className="p-6 border border-iran-green/20 rounded-lg hover:border-iran-red/40 transition-colors bg-white/50 backdrop-blur-sm">
-                <div className="aspect-square relative mb-4">
-                  <Image
-                    src="/images/partner4.jpg"
-                    alt="Partner 4"
-                    fill
-                    className="object-contain p-4"
-                  />
+                {/* Nasser */}
+                <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                  <div className="w-24 h-24 bg-iran-red rounded-full mx-auto mb-4 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">N</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-center mb-2">Nasser</h3>
+                  <p className="text-gray-600 text-center">Designer</p>
                 </div>
-                <h3 className="text-lg font-medium text-iran-green text-center">Iranian Crafts</h3>
               </div>
-            </div>
-          </div>
+            </Container>
+          </section>
         </div>
       </Container>
     </>
