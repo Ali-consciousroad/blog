@@ -3,6 +3,7 @@ import "tailwindcss/tailwind.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Header from "../components/header";
+import Footer from "../components/footer";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -20,11 +21,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <title>My awesome blog</title>
       </Head>
 
-      <Header />
-
-      <main className="p-0">
-        <Component {...pageProps} />
-      </main>
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </div>
     </Auth0Provider>
   );
 }
