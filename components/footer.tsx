@@ -47,8 +47,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Iran Blog. All rights reserved.</p>
+        
+        {/* Copyright */}
+        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; Pardis {new Date().getFullYear()}. All rights reserved.</p>
         </div>
       </Container>
     </footer>
